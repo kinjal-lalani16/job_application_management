@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="recuruit_form_view" model="ir.ui.view">
+        <field name="name">applicant view </field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[2]" position="inside">
+                <field name="job_experience"/>
+                <field name="state_id"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[1]" position="inside">
+                <field name="country_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

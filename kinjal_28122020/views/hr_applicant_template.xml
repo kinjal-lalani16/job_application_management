@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="job_e" inherit_id="website_hr_recruitment.apply">
+        <xpath expr="//form/div[4]" position="after">
+            <!--  <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>-->
+            <div class="form-group row form-field o_website_form_required_custom">
+                <div class="col-lg-3 col-md-4 text-right">
+                    <label class="col-form-label" for="job_experience">Experience</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    <input class="form-control o_website_form_input" name="job_experience" required="" type="text"/>
+                </div>
+            </div>
+
+            <div class="form-group row form-field o_website_form_required_custom">
+                <div class="col-lg-3 col-md-4 text-right">
+                    <label class="col-form-label" for="job_experience">Country</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                        <select id="country_id" class="form-control o_website_form_input"
+                                name="country_id">
+                            <option value="">----Select Country------</option>
+                            <t t-foreach="con" t-as="c">
+                                <option t-att-value="c.id">
+                                    <t t-esc="c.name" />
+                                </option>
+                            </t>
+                        </select>
+                </div>
+            </div>
+            <div id="state" class="form-group row form-field o_website_form_required_custom">
+                <div class="col-lg-3 col-md-4 text-right">
+                    <label class="col-form-label" for="job_experience">State</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    <select id="state_id" class="form-control o_website_form_input" name="state_id">
+                        <!-- <option value="">State..</option> -->
+                        <!-- <option value="checking">Checking</option> -->
+                    </select>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
